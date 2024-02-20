@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "inder";
+}
+.container{
+  display: flex;
+}
+
+.sidebar{
+ 
+  height: 100vh;
+  width: 332px;
+}
+.top_section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8px 20px 4px;
+  color: black;
+}
+
+.logo{
+  background-image: url(./FinSage_Logo.png);
+}
+.top_section>img{
+  width: 180px;
+}
+.main_menu{
+  /* background-color: #87cfeb75; */
+  font-size: 16px;
+  text-align: center;
+  margin: 45px 0px;
+
+}
+
+.link{
+  display: flex;
+  gap: 10px;
+  padding: 4px 20px;
+  text-decoration: none;
+  margin:0px 0px 6px 32px;
+  color: #000;
+  width: 65%;
+  border-radius: 6px;
+  transition: all 0.5s;
+  
+}
+.link:hover{
+  background-color: #87cfeb75;
+  transition: all 0.5s;
+}
+.main_menu>p{
+  color: #939393;
+  font-size: 14px;
+  margin: 0px 0px 16px 0px;
+
+}
+.main_menu>svg{
+  height: 32px;
+  width: 28px;
+}
+.active{
+  background-color: #87cfeb75;
+}
