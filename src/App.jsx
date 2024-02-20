@@ -12,11 +12,11 @@ function App() {
 
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/payments' element={<Payment/>}/>
-        <Route path='/budget' element={<Budget/>}/>
-        <Route path='/report' element={<Report/>}/>
-        <Route path='/analytics' element={<Analytics/>}/>
+        <Route path='/finsage/' element={<Home/>} />
+        <Route path='/finsage/payments' element={<Payment/>}/>
+        <Route path='/finsage/budget' element={<Budget/>}/>
+        <Route path='/finsage/report' element={<Report/>}/>
+        <Route path='/finsage/analytics' element={<Analytics/>}/>
       </Routes>
       </BrowserRouter>
 
