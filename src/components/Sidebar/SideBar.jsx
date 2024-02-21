@@ -26,27 +26,27 @@ function SideBar() {
     {
       path:"/",
       name:"Overview",
-      icon:"src/components/Sidebar/Sidebar_icons/chart.svg"
+      icon:"public/static/images/Sidebar_icons/graph.svg"
     },
     {
       path:'/payments',
       name:"Payments",
-      icon:"src/components/Sidebar/Sidebar_icons/payments.svg"
+      icon:"public/static/images/Sidebar_icons/payments.svg"
     },
     {
       path:'/budget',
       name:"Budget",
-      icon:"src/components/Sidebar/Sidebar_icons/wallet-minus.svg"
+      icon:"public/static/images/Sidebar_icons/wallet-minus.svg"
     },
     {
       path:'/report',
       name:"Report",
-      icon:"src/components/Sidebar/Sidebar_icons/personalcard.svg"
+      icon:"public/static/images/Sidebar_icons/personalcard.svg"
     },
     {
       path:'/analytics',
       name:"Analytics",
-      icon:"src/components/Sidebar/Sidebar_icons/chart.svg"
+      icon:"public/static/images/Sidebar_icons/chart.svg"
     },
   ]
 
@@ -55,27 +55,27 @@ function SideBar() {
     {
       path:'/incomes',
       name:"Incomes",
-      icon:"src/components/Sidebar/Sidebar_icons/income.svg"
+      icon:"public/static/images/Sidebar_icons/income.svg"
     },
     {
       path:'/debts',
       name:"Debts",
-      icon:"src/components/Sidebar/Sidebar_icons/group.svg"
+      icon:"public/static/images/Sidebar_icons/group.svg"
     },
     {
       path:'/bills',
       name:"Bills",
-      icon:"src/components/Sidebar/Sidebar_icons/bill.svg"
+      icon:"public/static/images/Sidebar_icons/bill.svg"
     },
     {
       path:'/investments',
       name:"Investments",
-      icon:"src/components/Sidebar/Sidebar_icons/dollar.svg"
+      icon:"public/static/images/Sidebar_icons/dollar.svg"
     },
     {
       path:'/assests',
       name:"Assests",
-      icon:"src/components/Sidebar/Sidebar_icons/coin.svg"
+      icon:"public/static/images/Sidebar_icons/coin.svg"
     }
   ]
 
@@ -84,10 +84,10 @@ function SideBar() {
       <div style={{width:open?"280px":"50px"}} className="sidebar"  ref={menuRef}>
         <div className="top_section"  >
           <div  className="Top_Logo" style={{scale:!open && "0"}}>
-            <img src="src\assets\FinSage_Logo.png"/>
+            <img src="public/static/images/FinSage_Logo.png"/>
             </div>
           <div className="bars" onClick={toggle} style={{right:open?"5%":"25%"}} >
-            <img src="src\components\Sidebar\Sidebar_icons\menu.svg" alt="" />
+            <img src="public/static/images//Sidebar_icons/menu.svg" alt="" />
           </div>
         </div>
         <div  className='main_menu'>
