@@ -26,27 +26,27 @@ function SideBar() {
     {
       path:"/",
       name:"Overview",
-      icon:"public/static/images/Sidebar_icons/graph.svg"
+      icon:"Sidebar_icons/graph.svg"
     },
     {
       path:'/payments',
       name:"Payments",
-      icon:"public/static/images/Sidebar_icons/payments.svg"
+      icon:"Sidebar_icons/payments.svg"
     },
     {
       path:'/budget',
       name:"Budget",
-      icon:"public/static/images/Sidebar_icons/wallet-minus.svg"
+      icon:"Sidebar_icons/wallet-minus.svg"
     },
     {
       path:'/report',
       name:"Report",
-      icon:"public/static/images/Sidebar_icons/personalcard.svg"
+      icon:"Sidebar_icons/personalcard.svg"
     },
     {
       path:'/analytics',
       name:"Analytics",
-      icon:"public/static/images/Sidebar_icons/chart.svg"
+      icon:"Sidebar_icons/chart.svg"
     },
   ]
 
@@ -55,27 +55,27 @@ function SideBar() {
     {
       path:'/incomes',
       name:"Incomes",
-      icon:"public/static/images/Sidebar_icons/income.svg"
+      icon:"Sidebar_icons/income.svg"
     },
     {
       path:'/debts',
       name:"Debts",
-      icon:"public/static/images/Sidebar_icons/group.svg"
+      icon:"Sidebar_icons/group.svg"
     },
     {
       path:'/bills',
       name:"Bills",
-      icon:"public/static/images/Sidebar_icons/bill.svg"
+      icon:"Sidebar_icons/bill.svg"
     },
     {
       path:'/investments',
       name:"Investments",
-      icon:"public/static/images/Sidebar_icons/dollar.svg"
+      icon:"Sidebar_icons/dollar.svg"
     },
     {
       path:'/assests',
       name:"Assests",
-      icon:"public/static/images/Sidebar_icons/coin.svg"
+      icon:"Sidebar_icons/coin.svg"
     }
   ]
 
@@ -84,10 +84,10 @@ function SideBar() {
       <div style={{width:open?"280px":"50px"}} className="sidebar"  ref={menuRef}>
         <div className="top_section"  >
           <div  className="Top_Logo" style={{scale:!open && "0"}}>
-            <img src="public/static/images/FinSage_Logo.png"/>
+            <img src="/FinSage_Logo.png"/>
             </div>
           <div className="bars" onClick={toggle} style={{right:open?"5%":"25%"}} >
-            <img src="public/static/images//Sidebar_icons/menu.svg" alt="" />
+            <img src="/Sidebar_icons/menu.svg" alt="" />
           </div>
         </div>
         <div  className='main_menu'>
