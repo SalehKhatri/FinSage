@@ -1,0 +1,40 @@
+.Error_page{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+.error_message{
+  /* background-color: aquamarine; */
+  text-align: center;
+  padding: 24px;
+}
+.error_message>h1{
+  font-size: 128px;
+  color: #2c69a5;
+}
+.error_message>p:nth-child(2){
+  margin: 12px;
+  font-size: 40px;
+
+}
+.error_message>p:nth-child(3){
+  margin: 8px;
+  font-size: 22px;
+}
+.home_button{
+  margin: 24px;
+
+}
+.home_button>a{
+  color: white;
+  background-color: #2c69a5;
+  padding: 8px 40px;
+  border-radius: 24px;
+}
+.home_button>a:hover{
+  cursor: pointer;
+  background-color: #265685;
+}

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import "./Sidebar.css"
+
+
 function SideBar() {
-  const [open,setOpen]=useState(false)
+  const [open,setOpen]=useState(true)
   const toggle=()=>setOpen(!open);
 
   // Logic to close sidebar when touch outside of the sidebar
@@ -12,7 +14,6 @@ function SideBar() {
     let handler=(e)=>{
       if(!menuRef.current.contains(e.target)){
         setOpen(false);
-        console.log(menuRef.current)
       }
     };
     document.addEventListener("mousedown",handler)
@@ -79,9 +80,24 @@ function SideBar() {
     }
   ]
 
+  const utilities=[
+    {
+      path:'/setting',
+      name:"Settings",
+      icon:"/Sidebar_icons/setting.svg",
+      gap:"4px"
+    },
+    {
+      path:'/logout',
+      name:"Logout",
+      icon:"/Sidebar_icons/logout.svg"
+
+    }
+  ]
+
   return (
     <div className='container'>
-      <div style={{width:open?"280px":"50px"}} className="sidebar"  ref={menuRef}>
+      <div style={{width:open?"220px":"50px"}} className="sidebar"  ref={menuRef}>
         <div className="top_section"  >
           <div  className="Top_Logo" style={{scale:!open && "0"}}>
             <img src="/FinSage_Logo.png"/>
@@ -92,13 +108,13 @@ function SideBar() {
         </div>
         <div  className='main_menu'>
           {/* TODO:Layout shift due to the text while closing the navbar!!! so removed the text */}
-          {/* <p>Main Menu</p> */}
+          {/* <p style={{scale:!open&&"0"}}>Main Menu</p> */}
         {
           menuItems.map((item,index)=>{
             return(
             <NavLink  style={{padding:!open && "6px 0px 6px 12px"}} to={item.path} key={index} className="link">
               <img src={item.icon}/>
-              <div className="link_text"  style={{visibility:!open&&"hidden"}}>{item.name}</div>
+              <div className="link_text"  style={{scale:!open&&"0"}}>{item.name}</div>
             </NavLink>);
           })
         }
@@ -111,7 +127,19 @@ function SideBar() {
               return(
               <NavLink style={{padding:!open && "6px 0px 6px 12px"}} to={item.path} key={index} className="link" >
                 <img src={item.icon}/>
-                <div className="link_text" style={{display:!open&&"none"}}>{item.name}</div>
+                <div className="link_text" style={{scale:!open&&"0"}}>{item.name}</div>
+              </NavLink>);
+            })
+          }
+        </div>
+
+        <div className="utilities">
+          {
+            utilities.map((item,index)=>{
+              return(
+              <NavLink style={{padding:!open && "6px 0px 6px 12px"}} to={item.path} key={index} className="link" >
+                <img src={item.icon}/>
+                <div className="link_text" style={{scale:!open&&"0"}}>{item.name}</div>
               </NavLink>);
             })
           }

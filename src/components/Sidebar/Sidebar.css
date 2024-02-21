@@ -32,14 +32,13 @@
   color: black;
 }
 
-.logo{
-  background-image: url(./FinSage_Logo.png);
-}
 .top_section>.Top_Logo>img{
   width: 160px;
 }
 .top_section>.Top_Logo{
   transition: all 0.3s;
+    transform-origin: left;
+  transition-duration: 0.3s;
 }
 .main_menu{
   /* background-color: #87cfeb75; */
@@ -89,7 +88,9 @@
 .active{
   background-color: #87cfeb75;
 }
-.link_text{
+.link_text{ 
+  transition: all 0.3s;
   transform-origin: left;
-  transition-duration: 0.3;
+  transition-duration: 0.3s;
+  
 }
