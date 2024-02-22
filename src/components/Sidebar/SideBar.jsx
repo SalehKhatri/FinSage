@@ -88,7 +88,7 @@ function SideBar() {
       gap:"4px"
     },
     {
-      path:'/logout',
+      path:'/login',
       name:"Logout",
       icon:"/Sidebar_icons/logout.svg"
 
@@ -97,6 +97,7 @@ function SideBar() {
 
   return (
     <div className='container'>
+      <div className="OverLay">
       <div style={{width:open?"220px":"50px"}} className="sidebar"  ref={menuRef}>
         <div className="top_section"  >
           <div  className="Top_Logo" style={{scale:!open && "0"}}>
@@ -145,7 +146,7 @@ function SideBar() {
           }
         </div>
       </div>
-      
+      </div>
     </div>
   )
 }
