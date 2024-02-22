@@ -108,7 +108,7 @@ function SideBar() {
         </div>
         <div  className='main_menu'>
           {/* TODO:Layout shift due to the text while closing the navbar!!! so removed the text */}
-          {/* <p style={{scale:!open&&"0"}}>Main Menu</p> */}
+          {/* <p>Main Menu</p> */}
         {
           menuItems.map((item,index)=>{
             return(
@@ -120,7 +120,7 @@ function SideBar() {
         }
         </div>
 
-        <div className="bucket_category">
+        <div className="bucket_category" >
           {/* <p>Bucket Category</p> */}
           {
             bucketCategory_items.map((item,index)=>{
