@@ -89,13 +89,29 @@
     transform-origin: left;
   transition-duration: 0.3s;
 }
+.user_profile{
+  gap: 12px;
+    padding: 6px 12px;
+  display: flex;
+  border-bottom: 1px solid #9393934f;
+}
+.user_profile>.user_picture>img{
+  height: 26px;
+}
+.user_profile>.user_name>p{
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s;
+  transform-origin: left;
+  transition-duration: 0.3s;
+}
 .main_menu{
-  /* background-color: #87cfeb75; */
   font-size: 16px;
   text-align: center;
-  margin: 45px 0px;
+  margin: 35px 0px;
 
 }
+
 
 .link{
   display: flex;
@@ -128,7 +144,7 @@
 .bucket_category{
   font-size: 16px;
   text-align: center;
-  margin: 45px 0px;
+  margin: 35px 0px;
 }
 .main_menu>svg{
   height: 32px;

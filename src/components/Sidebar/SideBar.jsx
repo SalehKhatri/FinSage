@@ -40,11 +40,6 @@ function SideBar() {
       icon:"Sidebar_icons/wallet-minus.svg"
     },
     {
-      path:'/report',
-      name:"Report",
-      icon:"Sidebar_icons/personalcard.svg"
-    },
-    {
       path:'/analytics',
       name:"Analytics",
       icon:"Sidebar_icons/chart.svg"
@@ -67,11 +62,6 @@ function SideBar() {
       path:'/bills',
       name:"Bills",
       icon:"Sidebar_icons/bill.svg"
-    },
-    {
-      path:'/investments',
-      name:"Investments",
-      icon:"Sidebar_icons/dollar.svg"
     },
     {
       path:'/assests',
@@ -105,6 +95,15 @@ function SideBar() {
             </div>
           <div className="bars" onClick={toggle} style={{right:open?"5%":"25%"}} >
             <img src="/Sidebar_icons/menu.svg" alt="" />
+          </div>
+        </div>
+        <div className="user_profile">
+          <div className="user_picture">
+            <img src="Sidebar_icons/profile.svg"/>
+          </div>
+          <div className="user_name">
+            {/* Display users first name only due to layout shift issue  */}
+            <p style={{scale:!open&&"0"}}>Saleh</p> 
           </div>
         </div>
         <div  className='main_menu'>
