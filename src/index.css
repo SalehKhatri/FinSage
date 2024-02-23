@@ -4,6 +4,7 @@
   font-style: normal;
 }
 /* don't change anything here for the sake of sidebar */
+/* and always give classname of first div in a page as home. check other pages for example */
 @media only screen and (max-width: 640px){
   .body{
     width: 100%;
