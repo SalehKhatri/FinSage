@@ -9,6 +9,7 @@ import Analytics from './pages/Analytics/Analytics'
 import SideBar from './components/Sidebar/SideBar'
 import Error from './pages/Error/Error'
 import Login from './pages/Login/Login'
+import SignUp from './pages/SignUp/SignUp'
 function App() {
   const location = useLocation();
   const shouldShowSidebar = () => {
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<Login/>}/>
+        <Route exact path='/signup' element={<SignUp/>}/>
         <Route exact path='/payments' element={<Payment/>}/>
         <Route exact path='/report' element={<Report/>}/>
         <Route exact path='/budget' element={<Budget/>}/>
