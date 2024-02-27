@@ -52,8 +52,8 @@ const SignUp = () => {
           <label className="label">Password</label>
           <input
             pattern="^(?=.*([A-Z].*[a-z].*[\d+_%@!$*~-]|\d.*[a-z+_%@!$*~-]|[+_%@!$*~-].*[a-z\d])|[a-z].*([A-Z].*[\d+_%@!$*~-]|\d.*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Z\d])|\d.*([A-Z].*[a-z+_%@!$*~-]|[a-z].*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Za-z])|[+_%@!$*~-].*([A-Z].*[a-z\d]|[a-z].*[A-Z\d]|\d.*[A-Za-z])))(?!.*{{escapeRegExp(username)}})[\w+_%@!$*~]+$"
-            minlength="8"
-            maxlength="100"
+            minLength="8"
+            maxLength="100"
             type="password"
             name="Password"
             id="Password"
@@ -71,8 +71,8 @@ const SignUp = () => {
           <label className="label">Confirm Password</label>
           <input
             pattern="^(?=.*([A-Z].*[a-z].*[\d+_%@!$*~-]|\d.*[a-z+_%@!$*~-]|[+_%@!$*~-].*[a-z\d])|[a-z].*([A-Z].*[\d+_%@!$*~-]|\d.*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Z\d])|\d.*([A-Z].*[a-z+_%@!$*~-]|[a-z].*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Za-z])|[+_%@!$*~-].*([A-Z].*[a-z\d]|[a-z].*[A-Z\d]|\d.*[A-Za-z])))(?!.*{{escapeRegExp(username)}})[\w+_%@!$*~]+$"
-            minlength="8"
-            maxlength="100"
+            minLength="8"
+            maxLength="100"
             type="password"
             name="Confirm_Password"
             id="Confirm_Password"

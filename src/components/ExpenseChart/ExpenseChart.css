@@ -1,0 +1,61 @@
+
+.chart_heading>p{
+  font-size: 18px;
+}
+.chart_weeklyExpense{
+  font-size: 10px;
+  color: #979797;
+  padding: 3px 8px;
+  margin-top: 10px;
+  border-radius: 6px;
+  width: fit-content;
+  background-color: #e5e5e5;
+}
+.expense_amount{
+  color: #13131a;
+  font-weight: 600;
+}
+.chart_main{
+  height: 30%;
+  margin-top: 20px;
+}
+@media only screen and (min-width:640px){
+  .chart_container{
+    margin-top: 10px;
+    width: 600px;
+    border: 0.7px solid #979797;
+    padding: 16px ;
+    border-radius: 12px;
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width:640px){
+  .chart_container{
+    margin-top: 10px;
+    height: 40%;
+    max-height: 280px;
+    width: 90%;
+    border: 1px solid #979797;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .chart_main{
+    height: 200px;
+  }
+}
+@media only screen and (max-width:400px){
+  .chart_container{
+    margin-top: 10px;
+    width: 90%;
+    height: 40%;
+    max-height: 280px;
+    max-width: 290px;
+    border: 1px solid #979797;
+    padding: 10px 6px 10px 6px;
+    border-radius: 12px;
+    justify-content: center;
+  }
+  .chart_main{
+    height: 200px;
+  }
+}

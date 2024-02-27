@@ -1,10 +1,11 @@
 import React from 'react'
 import './Home.css'
 import CurrencyConverter from '../../components/CurrencyConverter/CurrencyConverter'
+import ExpenseChart from '../../components/ExpenseChart/ExpenseChart'
 function Home() {
   return (
         <div className="body">
-        {/* <p>Overview</p> */}
+        <ExpenseChart/>
         <CurrencyConverter />
         </div>
   )
