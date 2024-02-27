@@ -75,7 +75,8 @@
 @media only screen and (max-width:640px){
   .converter_container{
     width: 90%;
-    height: 30%;
+    height: 40%;
+    max-height: 250px ;
     border: 1px solid #979797;
     padding: 10px;
     border-radius: 12px;
