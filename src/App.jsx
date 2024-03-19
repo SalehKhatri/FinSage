@@ -10,6 +10,7 @@ import SideBar from './components/Sidebar/SideBar'
 import Error from './pages/Error/Error'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
+import Settings from './pages/Settings/Settings'
 function App() {
   const location = useLocation();
   const shouldShowSidebar = () => {
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/report' element={<Report/>}/>
         <Route exact path='/budget' element={<Budget/>}/>
         <Route exact path='/analytics' element={<Analytics/>}/>
+        <Route exact path='/setting' element={<Settings/>}/>
         <Route path='*' element={<Error />} />
       </Routes>
       </div>

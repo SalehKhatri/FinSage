@@ -1,0 +1,70 @@
+.settings_mainContainer {
+  width: 100%;
+  display: flex;
+  margin-top: 12px;
+  justify-content: center;
+}
+.settings_container {
+  padding: 10px;
+  border-radius: 16px;
+  border: 1.5px solid #d9d9d9;
+  display: flex;
+  width: 88%;
+  background-color: #2c69a546;
+  justify-content: space-around;
+}
+.settings_heading {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.settings_pfp {
+  margin-top: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #2c69a5d0;
+}
+.settings_fieldsContainer {
+  width: 70%;
+}
+.settings_fields {
+  margin: 8px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+.settings_userFields {
+  color: gray;
+  width: 90%;
+  background-color: white;
+  border: none;
+  height: 36px;
+  padding: 2px 8px;
+  font-size: 16px;
+  border-radius: 16px;
+  cursor: auto;
+}
+.settings_userFields:focus {
+  border: none;
+  outline: none;
+}
+@media only screen and (min-width: 780px) {
+  .settings_fieldsContainer {
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .settings_container {
+    display: flex;
+    width: 80%;
+    padding: 20px 10px;
+    background-color: #2c69a546;
+  }
+}

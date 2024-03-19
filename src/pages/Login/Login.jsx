@@ -14,7 +14,7 @@ function Login() {
           <input type="text" name="Password" className="login_input_field" placeholder="Password" />
           <div className="login_utils">
             <p>Forgot password?</p>
-            <p>Create Account</p>
+            <NavLink to="/signup"><p>Create Account</p></NavLink>
           </div>
           <div className="login_button">
             <NavLink to='/'>Log in</NavLink>

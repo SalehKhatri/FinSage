@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignUp.css";
+import { NavLink } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -12,7 +13,7 @@ const SignUp = () => {
         <div className="signup_form">
           <div className="grid_field">
             <div className="child">
-              <label className="label">Fisrt Name</label>
+              <label className="label">First Name</label>
               <input
                 type="text"
                 name="FirstName"
@@ -28,19 +29,20 @@ const SignUp = () => {
               />
             </div>
 
-            <div>
-              <label className="label">Email</label>
-              <input type="email" name="Email" className="signup_input_field" />
-            </div>
-            <div>
+            
+            {/* <div>
               <label className="label">Birthdate</label>
               <input
                 type="date"
                 name="BirthDate"
                 className="signup_input_field"
               />
-            </div>
+            </div> */}
           </div>
+          <div>
+              <label className="label">Email</label>
+              <input type="email" name="Email" className="signup_input_field" />
+            </div>
           <label className="label">Username</label>
           <input
             type="text"
@@ -80,19 +82,16 @@ const SignUp = () => {
             required
           />
 
-          <input type="checkbox" name="form_sign" id="form_sign" />
+          {/* <input type="checkbox" name="form_sign" id="form_sign" />
           <label className="label">
             By ticking the box, you acknowledge you have read and agreed to our
             Terms of Use and Privacy Policy.
-          </label>
+          </label> */}
           <div className="buttons">
             <button className="create_account" type="button">
               Create Account
             </button>
-            <p>Already have an account?</p>
-            <button type="button" className="signin">
-              Sign In
-            </button>
+            <NavLink to="/login"><p>Already have an account?log in</p></NavLink>
           </div>
         </div>
       </div>
