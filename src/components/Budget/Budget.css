@@ -1,0 +1,70 @@
+.budget {
+  margin-top: 10px;
+  width: 325px;
+  border: 0.7px solid #979797;
+  padding: 16px;
+  border-radius: 12px;
+  margin-left: 20px;
+}
+.heading {
+  font-size: 22px;
+  font-weight: 500;
+  padding: 6px 0px 14px 0px;
+}
+.budget-body {
+  display: flex;
+  flex-direction: column;
+}
+.total-money {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.total-money > progress {
+  border: 0;
+  width: 90%;
+  height: 40px;
+  margin: 10px;
+}
+progress::-webkit-progress-bar {
+  border: 0;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #E5E5E5;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #014080;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 40px;
+    border-radius: 15px;
+}
+.title{
+    color: #939393;
+}
+.income-expense{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.income>ul>li>p,
+.expense>ul>li>p{
+    color: #939393;
+}
+.income,.expense{
+    font-size: 14px;
+    text-align: center;
+}
+.expense>ul>li::marker{
+    color:#E5E5E5 ;
+    font-size: large;
+}
+.income>ul>li::marker{
+    color: #014080;
+    font-size: large;
+}
+

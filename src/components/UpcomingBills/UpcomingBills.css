@@ -1,0 +1,37 @@
+.upcoming-bills {
+  margin-top: 10px;
+  width: 325px;
+  border: 0.7px solid #979797;
+  padding: 16px;
+  border-radius: 12px;
+  margin-left: 20px;
+}
+.upcoming-bills-body {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.number-of-bills {
+  padding: 15px 6px;
+  background-color: #87ceeb;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 15px;
+}
+.header > p {
+  font-size: 22px;
+  font-weight: 500;
+  word-break: break-all;
+  width: 105px;
+}
+.arrow-icon {
+  display: flex;
+  justify-content:flex-end;
+}
+.arrow-icon>img{
+    height: 50px;
+}
