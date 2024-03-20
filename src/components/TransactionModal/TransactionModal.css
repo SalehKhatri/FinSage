@@ -1,0 +1,50 @@
+.modal_wrapper{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(189,189,189,0.6);
+}
+.TransactionModal_container{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #6092c4;
+  width: 50%;
+  min-width: 350px;
+  max-width: 640px;
+
+}
+.Modal_Fields{
+  width: 100%;
+  
+
+}
+.modal_field{
+  margin: 8px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+.modal_field>label{
+  font-size: 18px;
+  color: black;
+}
+.modal_field>input{
+  color: gray;
+  width: 90%;
+  background-color: white;
+  border: none;
+  height: 36px;
+  padding: 2px 8px;
+  font-size: 16px;
+  border-radius: 16px;
+  cursor: auto;
+}
+@media only screen and (max-width: 640px){
+  .TransactionModal_container{
+    left:55%
+  }
+}

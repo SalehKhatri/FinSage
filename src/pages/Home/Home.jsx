@@ -5,8 +5,8 @@ import ExpenseChart from "../../components/ExpenseChart/ExpenseChart";
 import Expenses from "../../components/Expenses/Expenses";
 import TotalCard from "../../components/TotalCard/TotalCard";
 import Categories from "../../components/Categories/Categories";
-import UpcomingBills from "../../components/UpcomingBills/UpcomingBills";
-import Budget from "../../components/Budget/Budget";
+// import UpcomingBills from "../../components/UpcomingBills/UpcomingBills";
+// import Budget from "../../components/Budget/Budget";
 function Home() {
   return (
     <div className="body">
@@ -18,8 +18,8 @@ function Home() {
       <div className="side-2">
         <TotalCard />
         <Categories />
-        <UpcomingBills />
-        <Budget />
+        {/* <UpcomingBills /> */}
+        {/* <Budget /> */}
       </div>
     </div>
   );

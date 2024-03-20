@@ -11,6 +11,7 @@ import Error from './pages/Error/Error'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import Settings from './pages/Settings/Settings'
+import ShowModal from './components/ShowModal/ShowModal'
 function App() {
   const location = useLocation();
   const shouldShowSidebar = () => {
@@ -22,6 +23,7 @@ function App() {
 
       <div className="home"> {/* giving css to the div beceause sidebar takes whole screen and makes main page invisible DON'T MESS ANYTHING HERE IF POSSIBLE!!!*/}
          {shouldShowSidebar() &&  <SideBar /> }
+         <ShowModal />
       <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<Login/>}/>

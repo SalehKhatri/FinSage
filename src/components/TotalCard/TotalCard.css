@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  padding: 20px;
+  padding: 16px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -35,7 +35,7 @@
   gap: 10px;
 }
 
-img {
+.total-card>img {
   height: 3.5rem;
 }
 

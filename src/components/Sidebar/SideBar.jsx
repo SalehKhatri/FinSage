@@ -4,7 +4,7 @@ import "./Sidebar.css"
 
 
 function SideBar() {
-  const [open,setOpen]=useState(false)
+  const [open,setOpen]=useState(true)
   const toggle=()=>setOpen(!open);
 
   // Logic to close sidebar when touch outside of the sidebar

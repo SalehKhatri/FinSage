@@ -1,0 +1,16 @@
+.ShowModal_container{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  color: white;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2c69a5d0;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}

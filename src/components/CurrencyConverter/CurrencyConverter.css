@@ -1,7 +1,7 @@
 @media only screen and (min-width: 640px) {
   .converter_container {
     margin-top: 10px;
-    width: 600px;
+    width: 600;
     border: 0.7px solid #979797;
     padding: 16px;
     border-radius: 12px;

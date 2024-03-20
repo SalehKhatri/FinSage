@@ -32,7 +32,7 @@
 @media only screen and (max-width:640px){
   .chart_container{
     margin-top: 10px;
-    height: 40%;
+    height: 60%;
     max-height: 280px;
     width: 90%;
     border: 1px solid #979797;
@@ -47,7 +47,7 @@
   .chart_container{
     margin-top: 10px;
     width: 90%;
-    height: 40%;
+    height: 60%;
     max-height: 280px;
     max-width: 290px;
     border: 1px solid #979797;
