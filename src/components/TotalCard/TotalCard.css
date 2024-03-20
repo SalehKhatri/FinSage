@@ -1,0 +1,57 @@
+.total-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 640px) {
+  .total-card {
+    height: 30%;
+    margin-top: 10px;
+    /* width: 600px; */
+    border: 0.7px solid #979797;
+    border-radius: 12px;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .total-card{
+   display:none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .total-card{
+   display: none;
+  }
+}
+.my-balance,
+.expense,
+.income,
+.total-saving {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+img {
+  height: 3.5rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {
+  color: #718ebf;
+  font-size: small;
+}
+
+.amount {
+  font-size: medium;
+}
