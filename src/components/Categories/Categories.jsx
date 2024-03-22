@@ -1,15 +1,15 @@
 import React from "react";
 import "./Categories.css";
-import Home from "../../../public/Categories_icons/Home.svg";
-import Sort_icon from "../../../public/Categories_icons/sort_icon.svg";
-import Drinks from "../../../public/Categories_icons/drinks.svg";
-import Investment from "../../../public/Categories_icons/investment.svg";
-import Transportation from "../../../public/Categories_icons/transportation.svg";
-import Rent from "../../../public/Categories_icons/rent.svg";
-import Utilities from "../../../public/Categories_icons/utilities.svg";
-import Emergency from "../../../public/Categories_icons/emergency.svg";
-import Loans from "../../../public/Categories_icons/loans.svg";
-import Vacations from "../../../public/Categories_icons/vacations.svg";
+import Home from "/Categories_icons/Home.svg";
+import Sort_icon from "/Categories_icons/sort_icon.svg";
+import Drinks from "/Categories_icons/drinks.svg";
+import Investment from "/Categories_icons/investment.svg";
+import Transportation from "/Categories_icons/transportation.svg";
+import Rent from "/Categories_icons/rent.svg";
+import Utilities from "/Categories_icons/utilities.svg";
+import Emergency from "/Categories_icons/emergency.svg";
+import Loans from "/Categories_icons/loans.svg";
+import Vacations from "/Categories_icons/vacations.svg";
 
 
 const Categories = () => {
@@ -33,7 +33,7 @@ const Categories = () => {
       <div className="category-body">
         {category_item.map((category, index) => {
           return (
-            <div className="category">
+            <div className="category" key={index}>
               <div className="category-name">
                 <img src={category.image} alt="" />
                 <p>{category.name}</p>

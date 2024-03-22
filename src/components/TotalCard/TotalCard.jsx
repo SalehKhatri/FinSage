@@ -1,9 +1,9 @@
 import React from 'react'
 import './TotalCard.css'
-import Balance  from "../../../public/TotalCard_icons/balance.svg";
-import Income from "../../../public/TotalCard_icons/Income.svg";
-import Expense  from "../../../public/TotalCard_icons/Expense.svg";
-import TotalSaving  from "../../../public/TotalCard_icons/TotalSaving.svg";
+import Balance  from "/TotalCard_icons/balance.svg";
+import Income from "/TotalCard_icons/Income.svg";
+import Expense  from "/TotalCard_icons/Expense.svg";
+import TotalSaving  from "/TotalCard_icons/TotalSaving.svg";
 
 const TotalCard = () => {
   return (
