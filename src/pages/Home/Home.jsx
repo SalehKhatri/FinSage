@@ -9,6 +9,7 @@ import Categories from "../../components/Categories/Categories";
 // import Budget from "../../components/Budget/Budget";
 function Home() {
   return (
+    <div className="body">
     <div className="home_body">
       <div className="side-1">
         <ExpenseChart />
@@ -21,6 +22,7 @@ function Home() {
         {/* <UpcomingBills /> */}
         {/* <Budget /> */}
       </div>
+    </div>
     </div>
   );
 }
