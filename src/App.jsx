@@ -32,7 +32,7 @@ function App() {
       <LoadingBar color="#37689A" height={4} progress={useSelector(loader)} />
       <Toaster />
       {shouldShowSidebar() && <SideBar />}
-      <ShowModal />
+      {shouldShowSidebar() && <ShowModal/>}
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />

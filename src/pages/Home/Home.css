@@ -1,5 +1,6 @@
 @media only screen and (min-width: 1099px){
   .home_body {
+    width: 100%;
     display: flex;
   }
 }
