@@ -27,6 +27,7 @@
     margin-top: 10px;
     width: 90%;
     /* height: 40%; */
+    overflow-y: auto;
     max-width: 290px;
     max-height: 250px;
     border: 1px solid #979797;
