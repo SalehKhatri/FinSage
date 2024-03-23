@@ -1,8 +1,46 @@
 import React from "react";
 import "./SignUp.css";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { setLoader } from "../../utilities/Redux/loadingSlice";
+import { useDispatch } from "react-redux";
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
+
+  const onSubmit = async (data) => {
+    dispatch(setLoader(30));
+    const rawResponse = await fetch(
+      `${import.meta.env.VITE_API_BASE_URL}/user/signup`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    dispatch(setLoader(70));
+    const resposne = await rawResponse.json();
+    if (resposne.error) {
+      toast.error(resposne.error);
+    } else {
+      localStorage.setItem("auth-token", resposne.token);
+      toast.success("Welcome!");
+      navigate("/");
+    }
+    dispatch(setLoader(100));
+    console.log(data);
+  };
+
   return (
     <div className="signup_body">
       <div className="signup_container">
@@ -10,39 +48,117 @@ const SignUp = () => {
           <img src="/FinSage_Logo.png" />
           <p>Create Account</p>
         </div>
-        <div className="signup_form">
+        <form
+          method="POST"
+          onSubmit={handleSubmit(onSubmit)}
+          className="signup_form"
+        >
           <div className="grid_field">
             <div className="child">
               <label className="label">First Name</label>
               <input
+                required
                 type="text"
                 name="FirstName"
                 className="signup_input_field"
+                {...register("firstname", {
+                  required: {
+                    value: true,
+                    message: "First Name is required",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "min length is 2",
+                  },
+                })}
               />
+              {errors.firstname?.message && (
+                <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
+                  <img
+                    style={{ height: "18px", color: "red" }}
+                    src="/error_icons/caution.svg"
+                    alt=""
+                  />
+                  <p
+                    role="alert"
+                    style={{ color: "red" }}
+                    className="login_error_message"
+                  >
+                    {errors.firstname?.message}
+                  </p>
+                </div>
+              )}
             </div>
             <div className="child">
               <label className="label">Last Name</label>
               <input
+                required
                 type="text"
                 name="LastName"
                 className="signup_input_field"
+                {...register("lastname", {
+                  required: {
+                    value: true,
+                    message: "Last Name is required",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "min length is 2",
+                  },
+                })}
               />
+              {errors.lastname?.message && (
+                <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
+                  <img
+                    style={{ height: "18px", color: "red" }}
+                    src="/error_icons/caution.svg"
+                    alt=""
+                  />
+                  <p
+                    role="alert"
+                    style={{ color: "red" }}
+                    className="login_error_message"
+                  >
+                    {errors.lastname?.message}
+                  </p>
+                </div>
+              )}
             </div>
-
-            
-            {/* <div>
-              <label className="label">Birthdate</label>
-              <input
-                type="date"
-                name="BirthDate"
-                className="signup_input_field"
-              />
-            </div> */}
           </div>
           <div>
-              <label className="label">Email</label>
-              <input type="email" name="Email" className="signup_input_field" />
-            </div>
+            <label className="label">Email</label>
+            <input
+              required
+              name="Email"
+              className="signup_input_field"
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Email is required",
+                },
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            {errors.email?.message && (
+              <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
+                <img
+                  style={{ height: "18px", color: "red" }}
+                  src="/error_icons/caution.svg"
+                  alt=""
+                />
+                <p
+                  role="alert"
+                  style={{ color: "red" }}
+                  className="login_error_message"
+                >
+                  {errors.email?.message}
+                </p>
+              </div>
+            )}
+          </div>
           <label className="label">Username</label>
           <input
             type="text"
@@ -50,18 +166,73 @@ const SignUp = () => {
             id="Username"
             className="signup_input_field"
             required
+            {...register("username", {
+              required: {
+                value: true,
+                message: "Username is required",
+              },
+              minLength: {
+                value: 2,
+                message: "min length is 2",
+              },
+            })}
           />
+          {errors.username?.message && (
+            <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
+              <img
+                style={{ height: "18px", color: "red" }}
+                src="/error_icons/caution.svg"
+                alt=""
+              />
+              <p
+                role="alert"
+                style={{ color: "red" }}
+                className="login_error_message"
+              >
+                {errors.username?.message}
+              </p>
+            </div>
+          )}
           <label className="label">Password</label>
           <input
-            pattern="^(?=.*([A-Z].*[a-z].*[\d+_%@!$*~-]|\d.*[a-z+_%@!$*~-]|[+_%@!$*~-].*[a-z\d])|[a-z].*([A-Z].*[\d+_%@!$*~-]|\d.*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Z\d])|\d.*([A-Z].*[a-z+_%@!$*~-]|[a-z].*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Za-z])|[+_%@!$*~-].*([A-Z].*[a-z\d]|[a-z].*[A-Z\d]|\d.*[A-Za-z])))(?!.*{{escapeRegExp(username)}})[\w+_%@!$*~]+$"
-            minLength="8"
             maxLength="100"
             type="password"
             name="Password"
             id="Password"
             className="signup_input_field"
             required
+            {...register("password", {
+              required: {
+                value: true,
+                message: "Password is required",
+              },
+              pattern: {
+                value:
+                  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                message: "Password does't meet requirements",
+              },
+              minLength: {
+                value: 8,
+                message: "Password must be at least 8 characters",
+              },
+            })}
           />
+          {errors.password?.message && (
+            <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
+              <img
+                style={{ height: "18px", color: "red" }}
+                src="/error_icons/caution.svg"
+                alt=""
+              />
+              <p
+                role="alert"
+                style={{ color: "red" }}
+                className="login_error_message"
+              >
+                {errors.password?.message}
+              </p>
+            </div>
+          )}
           <label className="pass_pattern">
             Your password must include the following:
             <ul>
@@ -72,15 +243,40 @@ const SignUp = () => {
           </label>
           <label className="label">Confirm Password</label>
           <input
-            pattern="^(?=.*([A-Z].*[a-z].*[\d+_%@!$*~-]|\d.*[a-z+_%@!$*~-]|[+_%@!$*~-].*[a-z\d])|[a-z].*([A-Z].*[\d+_%@!$*~-]|\d.*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Z\d])|\d.*([A-Z].*[a-z+_%@!$*~-]|[a-z].*[A-Z+_%@!$*~-]|[+_%@!$*~-].*[A-Za-z])|[+_%@!$*~-].*([A-Z].*[a-z\d]|[a-z].*[A-Z\d]|\d.*[A-Za-z])))(?!.*{{escapeRegExp(username)}})[\w+_%@!$*~]+$"
-            minLength="8"
             maxLength="100"
             type="password"
             name="Confirm_Password"
             id="Confirm_Password"
             className="signup_input_field"
             required
+            {...register("confirmpassword", {
+              validate: (val) => {
+                if (watch("password") != val) {
+                  return "Your passwords do no match";
+                }
+              },
+              required: {
+                value: true,
+                message: "This field is required",
+              },
+            })}
           />
+          {errors.confirmpassword?.message && (
+            <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
+              <img
+                style={{ height: "18px", color: "red" }}
+                src="/error_icons/caution.svg"
+                alt=""
+              />
+              <p
+                role="alert"
+                style={{ color: "red" }}
+                className="login_error_message"
+              >
+                {errors.confirmpassword?.message}
+              </p>
+            </div>
+          )}
 
           {/* <input type="checkbox" name="form_sign" id="form_sign" />
           <label className="label">
@@ -88,12 +284,14 @@ const SignUp = () => {
             Terms of Use and Privacy Policy.
           </label> */}
           <div className="buttons">
-            <button className="create_account" type="button">
+            <button className="create_account" type="submit">
               Create Account
             </button>
-            <NavLink to="/login"><p>Already have an account?log in</p></NavLink>
+            <NavLink to="/login">
+              <p>Already have an account?log in</p>
+            </NavLink>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

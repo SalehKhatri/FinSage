@@ -8,6 +8,7 @@
 }
 .login_container>.logo{
   display: flex;
+  box-sizing: border-box;
   padding: 30px;
   justify-content: center;
 }
@@ -23,7 +24,7 @@
 .login_container>.login_form{
   width: 100%;
 }
-.login_container>.login_form>.login_input_field{
+.login_container>.login_form_container>.login_form>.login_input_field{
   width: 100%;
   color: #001F3F;
   height: 32px;
@@ -33,38 +34,40 @@
   border-radius: 6px;
   margin: 8px 0px;
 }
-.login_container>.login_form>.login_utils{
+.login_container>.login_form_container>.login_form>.login_utils{
   display: flex;
   font-size: 10px;
   justify-content: space-between;
 }
-.login_container>.login_form>.login_utils>p:hover{
+.login_container>.login_form_container>.login_form>.login_utils>p:hover,.login_container>.login_form_container>.login_form>.login_utils>a:hover{
   cursor: pointer;
   text-decoration: underline;
 }
 
-.login_container>.login_form>.login_button{
-  margin-top: 7vh;
+.login_container>.login_form_container>.login_form>.login_button{
+  margin-top: 6vh;
   display: flex;
   justify-content: center;
   text-align: center;
 }
-.login_container>.login_form>.login_button>a{
+.login_container>.login_form_container>.login_form>.login_button>button{
+  cursor: pointer;
   background-color: #37689A;
   color: white;
+  border: none;
   border-radius: 8px;
   padding: 8px 42px;
   transition: all 0.4s;
 }
-.login_container>.login_form>.login_button>a:hover{
+.login_container>.login_form_container>.login_form>.login_button>button:hover{
   scale: 1.05;
   background-color: #275078;
 }
-.login_container>.login_form>.login_input_field::placeholder {
+.login_container>.login_form_container>.login_form>.login_input_field::placeholder {
   color: #001F3F;;
   opacity: 1; 
 }
 
-.login_container>.login_form>.login_input_field::-ms-input-placeholder { 
+.login_container>.login_form_container>.login_form>.login_input_field::-ms-input-placeholder { 
   color: #001F3F;;
 }
