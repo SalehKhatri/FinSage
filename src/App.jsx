@@ -17,7 +17,7 @@ import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { loader } from "./utilities/Redux/loadingSlice";
 import PrivateRoute from "./utilities/PrivateRoute";
-import { fetchUserDetails } from "./utilities/Redux/userSlice";
+import { fetchUserDetails, user } from "./utilities/Redux/userSlice";
 function App() {
   const location = useLocation();
   const shouldShowSidebar = () => {
@@ -30,7 +30,7 @@ function App() {
     dispatch(fetchUserDetails());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  console.log(useSelector(user).user);
   return (
     // Setting up routes of pages with react-router-dom
 

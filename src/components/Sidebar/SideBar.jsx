@@ -76,11 +76,6 @@ function SideBar() {
       icon: "/Sidebar_icons/setting.svg",
       gap: "4px",
     },
-    // {
-    //   path: "/login",
-    //   name: "Logout",
-    //   icon: "/Sidebar_icons/logout.svg",
-    // },
   ];
 
 const handleLogout=()=>{

@@ -6,7 +6,7 @@
     border: 0.7px solid #979797;
     padding: 16px;
     border-radius: 12px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     overflow-y: auto;
   }
 }

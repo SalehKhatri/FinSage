@@ -18,7 +18,7 @@ const Transactions = ({ transactions }) => {
         <table className="transaction">
           <thead>
             <tr>
-              <th>Transaction Name</th>
+              <th>Name</th>
               <th>Category</th>
               <th>Amount</th>
             </tr>

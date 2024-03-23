@@ -8,13 +8,14 @@
 
 @media only screen and (min-width: 640px) {
   .expenses {
-    margin-left: 20px;
     width: 90%;
+    margin-left: 20px;
   }
 }
+
 @media screen and (max-width: 640px) {
   .expenses {
-    padding: 0 10px; /* Adjust padding for smaller screens */
+    padding: 10px 10px; /* Adjust padding for smaller screens */
     width: 90%;
     max-width: 290px;
     max-height: 250px;
@@ -54,5 +55,14 @@
 
   .date {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .expenses {
+    padding: 10px 6px; /* Adjust padding for smaller screens */
+    width: 90%;
+    max-width: 290px;
+    max-height: 250px;
+    overflow-y: auto;
   }
 }

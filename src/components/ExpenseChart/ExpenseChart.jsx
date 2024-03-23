@@ -20,7 +20,7 @@ function ExpenseChart() {
       .then((data) => data.json())
       .then((response) => {
         setWeeklyExpense(response);
-        console.log(response);
+        // console.log(response);
         response.expensesPerDay.map((respone)=>{
           labels.push(respone.day);
           daywiseExpense.push(respone.totalExpense);
