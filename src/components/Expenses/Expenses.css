@@ -1,0 +1,176 @@
+.expenses {
+  margin-top: 10px;
+  width: 600px;
+  border: 0.7px solid #979797;
+  padding: 16px;
+  border-radius: 12px;
+}
+/* .expense-heading{
+    font-size: 22px;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.expense-body{
+    display: flex;
+    flex-direction: column;
+}
+.expense-utils{
+    display: flex;
+    gap: 10px;
+}
+@media only screen and (min-width:640px){
+    .expenses{
+      margin-top: 10px;
+      width: 600px;
+      border: 0.7px solid #979797;
+      padding: 16px ;
+      border-radius: 12px;
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (max-width:640px){
+    .expenses{
+      margin-top: 10px;
+      height: fit-content;
+      max-height: 300px;
+      width: 95%;
+      border: 1px solid #979797;
+      padding: 10px;
+      border-radius: 12px;
+
+    }
+}
+@media only screen and (max-width:400px){
+    .expenses{
+      margin-top: 10px;
+      width: 95%;
+      height: fit-content;
+      max-height: 300px;
+      min-width: 300px;
+      border: 1px solid #979797;
+      padding: 10px 6px 10px 6px;
+      border-radius: 12px;
+      /* justify-content: center; */
+
+/* Transactions.css */
+
+.expense-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+  padding: 6px 0;
+}
+
+.expense-utils img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.expense-body {
+  overflow-x: auto; /* Allow horizontal scrolling for small screens */
+}
+
+.transaction {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction th {
+  font-size: 14px;
+  color: #939393;
+  font-weight: 500;
+}
+
+.transaction th,
+.transaction td {
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  text-align: left;
+}
+
+/* TransactionItem.css */
+.transaction-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.date {
+  color: #939393;
+  font-size: 12px;
+}
+
+.amount {
+  text-align: right;
+}
+
+.transaction-category {
+  font-size: 14px;
+}
+
+.transaction-category::before {
+  content: "\2022";
+  padding-right: 10px;
+  color: #87ceeb;
+}
+
+/* Add responsive CSS here */
+@media only screen and (min-width: 640px) {
+  .expenses {
+    margin-left: 20px;
+    width: 600px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .expenses {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+    width: 90%;
+    max-width: 350px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+
+  .expense-utils {
+    margin-top: 10px;
+  }
+
+  .expense-heading {
+    font-size: 18px;
+  }
+  .expense-utils img {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .expense-body {
+    overflow-x: auto;
+  }
+
+  .transaction th,
+  .transaction td {
+    font-size: 14px;
+    width: 40%;
+  }
+
+  .transaction-category {
+    word-break: break-word;
+    hyphens: manual;
+  }
+
+  .name {
+    margin-bottom: 5px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+}

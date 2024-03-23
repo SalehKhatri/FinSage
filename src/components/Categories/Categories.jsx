@@ -26,7 +26,7 @@ const Categories = () => {
   ];
   return (
     <div className="categories">
-      <div className="heading">
+      <div className="categories-heading">
         <p>Categories</p>
         <img src={Sort_icon} alt="" />
       </div>

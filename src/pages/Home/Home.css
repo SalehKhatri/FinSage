@@ -1,3 +1,58 @@
-.body {
-  display: flex;
+.home-body {
+  background-color: #f5f5f5;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.heading {
+  color: #343c6a;
+  background-color: #f5f5f5;
+  font-family: "inder";
+  border-bottom: 1px solid #d9d9d9;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+}
+.heading p {
+  /* padding-left:; */
+  font-size: 40px;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1279px) {
+  .body {
+    display: flex;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 1279px) {
+  .side-2 {
+    display: flex;
+    width: 620px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .side-1 {
+    width: 100%;
+    height: fit-content;
+    padding: 0 10px;
+  }
+  .side-2 {
+    height: fit-content;
+    padding: 0 10px;
+    width: 100%;
+  }
+  .heading {
+    padding-left: 60px;
+  }
 }

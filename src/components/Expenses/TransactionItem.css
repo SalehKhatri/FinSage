@@ -1,0 +1,37 @@
+/* .name {
+  color: #13131a;
+  font-size: 16px;
+  font-weight: 600;
+}
+.date {
+  color: #939393;
+  font-size: 12px;
+}
+.transaction-category {
+  color: #939393;
+  font-size: 15px;
+}
+.transaction-category::before {
+  content: "\2022";
+  padding-right: 10px;
+  color: #87ceeb;
+}
+
+@media only screen and (min-width: 640px) {
+  
+}
+@media only screen and (max-width: 400px) {
+  
+  .name{
+    font-size: 12px;
+  }
+  .date{font-size: 10px;}  
+  .transaction-category{
+    font-size: 13px;
+   
+    
+  }
+  .amount{
+    font-size: 12px;
+  }
+} */

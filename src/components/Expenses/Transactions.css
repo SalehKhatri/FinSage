@@ -1,0 +1,23 @@
+/* .transaction>thead>tr>th{
+    color: #939393;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: left;
+    padding-bottom: 6px;
+    
+}
+.transaction{
+    margin: 10px;
+}
+
+@media only screen and (max-width: 400px){
+   
+.transaction>tbody>tr>td{
+    max-width: 40px ;
+    overflow: hidden;
+}
+.transaction>thead>tr>th{
+    max-width: 40px ;
+    overflow: hidden;
+}
+} */

@@ -9,17 +9,22 @@ import Categories from "../../components/Categories/Categories";
 // import Budget from "../../components/Budget/Budget";
 function Home() {
   return (
-    <div className="body">
-      <div className="side-1">
-        <ExpenseChart />
-        <CurrencyConverter />
-        <Expenses />
+    <div className="home-body">
+      <div className="heading">
+        <p>Overview</p>
       </div>
-      <div className="side-2">
-        <TotalCard />
-        <Categories />
-        {/* <UpcomingBills /> */}
-        {/* <Budget /> */}
+      <div className="body">
+        <div className="side-1">
+          <ExpenseChart />
+          <CurrencyConverter />
+          <Expenses />
+        </div>
+        <div className="side-2">
+          <TotalCard />
+          <Categories />
+          {/* <UpcomingBills /> */}
+          {/* <Budget /> */}
+        </div>
       </div>
     </div>
   );

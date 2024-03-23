@@ -7,7 +7,7 @@ import CategoryItem from "./CategoryItems";
 const Category = ({ categoryItems }) => {
   return (
     <div className="categories">
-      <div className="heading">
+      <div className="category-heading">
         <p>Categories</p>
         <img src={Sort_icon} alt="" />
       </div>

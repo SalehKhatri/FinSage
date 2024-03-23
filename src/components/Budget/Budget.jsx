@@ -4,7 +4,7 @@ import "./Budget.css";
 const Budget = () => {
   return (
     <div className="budget">
-      <div className="heading">
+      <div className="budget-heading">
         <p>Budget</p>
       </div>
       <div className="budget-body">
