@@ -1,0 +1,58 @@
+.expenses {
+  margin-top: 10px;
+  width: 90%;
+  border: 0.7px solid #979797;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+@media only screen and (min-width: 640px) {
+  .expenses {
+    margin-left: 20px;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .expenses {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+    width: 90%;
+    max-width: 290px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+
+  .expense-utils {
+    margin-top: 10px;
+  }
+
+  .expense-heading {
+    font-size: 18px;
+  }
+  .expense-utils img {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .expense-body {
+    overflow-x: auto;
+  }
+
+  .transaction th,
+  .transaction td {
+    font-size: 14px;
+    width: 40%;
+  }
+
+  .transaction-category {
+    word-break: break-word;
+    hyphens: manual;
+  }
+
+  .name {
+    margin-bottom: 5px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+}
