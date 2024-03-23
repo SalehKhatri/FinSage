@@ -1,0 +1,28 @@
+.transaction-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.date {
+  color: #939393;
+  font-size: 12px;
+}
+
+.amount {
+  text-align: right;
+}
+
+.transaction-category {
+  font-size: 14px;
+}
+
+.transaction-category::before {
+  content: "\2022";
+  padding-right: 10px;
+  color: #87ceeb;
+}
