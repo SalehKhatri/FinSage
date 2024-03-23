@@ -16,29 +16,50 @@ function Login() {
     formState: { errors },
   } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
+    const toastId = toast.loading("Please wait...");
     dispatch(setLoader(30));
-    const rawResponse = await fetch(
-      `${import.meta.env.VITE_API_BASE_URL}/user/login`,
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-    dispatch(setLoader(70));
-    const resposne = await rawResponse.json();
-    if (resposne.error) {
-      toast.error(resposne.error);
-    } else {
-      localStorage.setItem("auth-token", resposne.token);
-      toast.success("Welcome back!");
-      navigate("/");
-    }
-    dispatch(setLoader(100));
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/user/login`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      
+    })
+      .then((data) => data.json())
+      .then((response) => {
+        if (response.token) {
+          localStorage.setItem("auth-token", response.token);
+          toast.success("Welcome back!", {
+            id: toastId,
+          });
+          navigate("/");
+        } else {
+          console.log(response);
+          toast.error(response.error, {
+            id: toastId,
+          });
+        }
+        console.log(response);
+        dispatch(setLoader(100));
+      })
+      .catch((e) => {
+        console.log(e);
+        toast.error("Oops an error occured", {
+          id: toastId,
+        });
+      });
+    // dispatch(setLoader(70));
+    // const resposne = await rawResponse.json();
+    // if (resposne.error) {
+    //   toast.error(resposne.error);
+    // } else {
+    //   localStorage.setItem("auth-token", resposne.token);
+    //   toast.success("Welcome back!");
+    //   navigate("/");
+    // }
   };
 
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -14,15 +14,23 @@ import Settings from "./pages/Settings/Settings";
 import ShowModal from "./components/ShowModal/ShowModal";
 import LoadingBar from "react-top-loading-bar";
 import { Toaster } from "react-hot-toast";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loader } from "./utilities/Redux/loadingSlice";
 import PrivateRoute from "./utilities/PrivateRoute";
+import { fetchUserDetails } from "./utilities/Redux/userSlice";
 function App() {
   const location = useLocation();
   const shouldShowSidebar = () => {
     const { pathname } = location;
     return !["/login", "/signup"].includes(pathname);
   };
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserDetails());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     // Setting up routes of pages with react-router-dom
 
@@ -32,7 +40,7 @@ function App() {
       <LoadingBar color="#37689A" height={4} progress={useSelector(loader)} />
       <Toaster />
       {shouldShowSidebar() && <SideBar />}
-      {shouldShowSidebar() && <ShowModal/>}
+      {shouldShowSidebar() && <ShowModal />}
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />

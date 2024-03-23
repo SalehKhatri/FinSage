@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
 import "./Settings.css";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUserDetails, user } from "../../utilities/Redux/userSlice";
+import { useSelector } from "react-redux";
+import { user } from "../../utilities/Redux/userSlice";
 import ClipLoader from "react-spinners/ClipLoader";
 function Settings() {
-  const dispatch = useDispatch();
   const userDetails = useSelector(user);
 
-  useEffect(() => {
-    dispatch(fetchUserDetails());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="body">

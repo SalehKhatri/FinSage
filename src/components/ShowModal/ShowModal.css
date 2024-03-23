@@ -13,4 +13,8 @@
   font-size: 24px;
   border: none;
   cursor: pointer;
+  transition: all 0.2s;
+}
+.ShowModal_container:hover{
+  background-color: #2c69a5;
 }

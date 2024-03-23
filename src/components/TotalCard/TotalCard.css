@@ -18,12 +18,12 @@
 
 @media only screen and (max-width: 640px) {
   .total-card{
-   display:none;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .total-card{
-   display: none;
+    height: 30%;
+    margin-top: 10px;
+    width: 90%;
+    border: 0.7px solid #979797;
+    border-radius: 12px;
+    padding: 10px;
   }
 }
 .my-balance,

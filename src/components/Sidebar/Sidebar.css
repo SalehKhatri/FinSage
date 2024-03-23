@@ -22,6 +22,7 @@
   z-index: 999;
   background: #fff;
   }
+
 }
 
 /* The commented are old styles of sidebar ! dont delete */
@@ -160,4 +161,14 @@
   transform-origin: left;
   transition-duration: 0.3s;
   
+}
+
+.link>button{
+  transition: all 0.3s;
+  transform-origin: left;
+  transition-duration: 0.3s;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }

@@ -1,38 +1,47 @@
-.modal_wrapper{
+.modal_wrapper {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(189,189,189,0.6);
+  background-color: rgba(189, 189, 189, 0.6);
 }
-.TransactionModal_container{
+.TransactionModal_container {
+  justify-content: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: #6092c4;
+  transform: translate(-50%, -50%);
+  background-color: #6092c4d0;
   width: 50%;
   min-width: 350px;
   max-width: 640px;
-
+  padding: 28px;
+  border-radius: 18px;
 }
-.Modal_Fields{
+.modal_heading {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 26px;
+}
+.Modal_Fields {
+  justify-content: center;
   width: 100%;
-  
-
-}
-.modal_field{
-  margin: 8px;
   display: flex;
+  align-items: center;
   gap: 6px;
   flex-direction: column;
+  gap: 12px;
 }
-.modal_field>label{
+.Modal_Fields > label {
   font-size: 18px;
-  color: black;
+  color: white;
 }
-.modal_field>input{
+.Modal_Fields > option {
+  cursor: pointer;
+}
+.Modal_Fields > input {
+  box-sizing: border-box;
   color: gray;
   width: 90%;
   background-color: white;
@@ -43,8 +52,63 @@
   border-radius: 16px;
   cursor: auto;
 }
-@media only screen and (max-width: 640px){
-  .TransactionModal_container{
-    left:55%
+
+.Modal_dropdowns > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+.Modal_Fields > input:focus,
+.Modal_dropdowns > select:focus {
+  outline: none;
+}
+.Modal_dropdowns > select {
+  background-color: white;
+  border: none;
+  height: 36px;
+  padding: 2px 8px;
+  font-size: 16px;
+  border-radius: 16px;
+  cursor: auto;
+  color: gray;
+  width: 34.8%;
+  cursor: pointer;
+  
+  
+}
+
+.Modal_dropdowns {
+  margin: 16px 0px 10px 0px;
+  width: 90%;
+  display: flex;
+  gap: 8px;
+}
+.modal_buttons{
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Modal_Fields>.modal_buttons>button{
+    background-color: #2d6195;
+    width: 20%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.Modal_Fields>.modal_buttons>button:hover{
+  background-color: #244b72;
+  scale: 1.08;
+  transition: all 0.3s;
+}
+@media only screen and (max-width: 640px) {
+  .TransactionModal_container {
+    left: 57%;
   }
 }
