@@ -5,9 +5,14 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { setLoader } from "../../utilities/Redux/loadingSlice";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isPassVisible, setIsPassVisible] = useState(false);
+  const [isConfirmPassVisible, setIsConfirmPassVisible] = useState(false);
   const {
     register,
     handleSubmit,
@@ -194,29 +199,36 @@ const SignUp = () => {
             </div>
           )}
           <label className="label">Password</label>
-          <input
-            maxLength="100"
-            type="password"
-            name="Password"
-            id="Password"
-            className="signup_input_field"
-            required
-            {...register("password", {
-              required: {
-                value: true,
-                message: "Password is required",
-              },
-              pattern: {
-                value:
-                  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-                message: "Password does't meet requirements",
-              },
-              minLength: {
-                value: 8,
-                message: "Password must be at least 8 characters",
-              },
-            })}
-          />
+          <div className="password">
+            <input
+              maxLength="100"
+              type={isPassVisible ? "text" : "password"}
+              name="Password"
+              id="Password"
+              required
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "Password is required",
+                },
+                pattern: {
+                  value:
+                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                  message: "Password does't meet requirements",
+                },
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              })}
+            />
+            <div
+              className="eye_icon"
+              onClick={() => setIsPassVisible((state) => !state)}
+            >
+              {!isPassVisible ? <VisibilityIcon /> : <VisibilityOffIcon />}
+            </div>
+          </div>
           {errors.password?.message && (
             <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
               <img
@@ -242,25 +254,37 @@ const SignUp = () => {
             </ul>
           </label>
           <label className="label">Confirm Password</label>
-          <input
-            maxLength="100"
-            type="password"
-            name="Confirm_Password"
-            id="Confirm_Password"
-            className="signup_input_field"
-            required
-            {...register("confirmpassword", {
-              validate: (val) => {
-                if (watch("password") != val) {
-                  return "Your passwords do no match";
-                }
-              },
-              required: {
-                value: true,
-                message: "This field is required",
-              },
-            })}
-          />
+          <div className="password">
+            <input
+              maxLength="100"
+              type={isConfirmPassVisible ? "text" : "password"}
+              name="Confirm_Password"
+              id="Confirm_Password"
+              className="signup_input_field"
+              required
+              {...register("confirmpassword", {
+                validate: (val) => {
+                  if (watch("password") != val) {
+                    return "Your passwords do no match";
+                  }
+                },
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
+              })}
+            />
+            <div
+              className="eye_icon"
+              onClick={() => setIsConfirmPassVisible((state) => !state)}
+            >
+              {!isConfirmPassVisible ? (
+                <VisibilityIcon />
+              ) : (
+                <VisibilityOffIcon />
+              )}
+            </div>
+          </div>
           {errors.confirmpassword?.message && (
             <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
               <img
