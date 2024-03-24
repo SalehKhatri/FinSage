@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import {  useSelector } from "react-redux";
 import { user } from "../../utilities/Redux/userSlice";
+import toast from "react-hot-toast";
 function SideBar() {
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen(!open);
@@ -80,6 +81,7 @@ function SideBar() {
 
 const handleLogout=()=>{
   localStorage.removeItem("auth-token");
+  toast.success("logged out!");
   navigate('/login')
 }
 
