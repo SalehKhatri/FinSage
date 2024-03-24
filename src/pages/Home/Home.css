@@ -1,8 +1,13 @@
 @media only screen and (min-width: 1099px){
   .home_body {
+
     width: 100%;
     display: flex;
-    gap:20px
+    gap:30px
   }
+}
+.home_body{
+  justify-content: center;
+  /* align-items: center; */
 }
 

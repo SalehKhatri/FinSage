@@ -13,7 +13,7 @@ function Home() {
   const dispatch=useDispatch();
   useEffect(()=>{
     dispatch(fetchUserDetails())
-  })
+  },[])
   return (
     <div className="body">
     <div className="home_body">
@@ -26,9 +26,6 @@ function Home() {
         <Categories />
         {/* <UpcomingBills /> */}
         {/* <Budget /> */}
-      </div>
-      <div className="side-3">
-      <Expenses />
       </div>
     </div>
     </div>

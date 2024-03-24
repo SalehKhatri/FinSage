@@ -19,14 +19,14 @@ function CurrencyConverter() {
         `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json`
       )
         .then((data) => data.json())
-        .then((data) => setResult(amount * data.usd.inr.toFixed(2)));
+        .then((data) => setResult((amount * data.usd.inr).toFixed(2)));
       // only showing 2 digits after decimals
     } else {
       fetch(
         `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/inr.json`
       )
         .then((data) => data.json())
-        .then((data) => setResult(amount * data.inr.usd.toFixed(2)));
+        .then((data) => setResult((amount*data.inr.usd).toFixed(2)));
     }
   };
   return (

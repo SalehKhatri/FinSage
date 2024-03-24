@@ -24,7 +24,29 @@
 .login_container>.login_form{
   width: 100%;
 }
-.login_container>.login_form_container>.login_form>.login_input_field{
+.password_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #001F3F;
+}
+.password_div>.eye_icon>svg{
+  height: 100%;
+  cursor: pointer;
+  border-left: 1px solid #979797;
+  padding: 0px 6px;
+}
+.password_div>input{
+  background-color: inherit;
+
+  height: 32px;
+  border: none;
+  width: 100%;
+}
+.login_input_field,.password_div>input:focus{
+  outline: none;
+}
+.login_container>.login_form_container>.login_form>.login_input_field,.password_div,.password_div{
   width: 100%;
   color: #001F3F;
   height: 32px;
@@ -34,6 +56,9 @@
   border-radius: 6px;
   margin: 8px 0px;
 }
+.password_div{
+  padding: 3px 0px 3px 3px;
+}
 .login_container>.login_form_container>.login_form>.login_utils{
   display: flex;
   font-size: 10px;
@@ -42,6 +67,9 @@
 .login_container>.login_form_container>.login_form>.login_utils>p:hover,.login_container>.login_form_container>.login_form>.login_utils>a:hover{
   cursor: pointer;
   text-decoration: underline;
+}
+.login_utils>a{
+  color: black;
 }
 
 .login_container>.login_form_container>.login_form>.login_button{
@@ -63,6 +91,15 @@
   scale: 1.05;
   background-color: #275078;
 }
+.password_div>.login_input_field::placeholder{
+  color: #001F3F;;
+  opacity: 1; 
+}
+.password_div>.login_input_field::-ms-input-placeholder {
+  color: #001F3F;;
+  opacity: 1; 
+}
+
 .login_container>.login_form_container>.login_form>.login_input_field::placeholder {
   color: #001F3F;;
   opacity: 1; 

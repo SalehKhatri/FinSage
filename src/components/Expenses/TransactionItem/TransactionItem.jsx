@@ -1,17 +1,27 @@
 import React from "react";
 import "./TransactionItem.css";
 
-const TransactionItem = ({ name, date, category, amount }) => {
+const TransactionItem = (props) => {
+  const formatDate = (inputDate) => {
+    let date = new Date(inputDate);
+    date =
+      date.getDate() +
+      "-" +
+      date.toLocaleString("default", { month: "long" }) +
+      "-" +
+      date.getFullYear();
+    return date;
+  };
   return (
     <tr>
       <td>
         <div className="transaction-name">
-          <p className="name">{name}</p>
-          <p className="date">{date}</p>
+          <p className="name">{props.description}</p>
+          <p className="date">{formatDate(props.date)}</p>
         </div>
       </td>
-      <td className="transaction-category">{category}</td>
-      <td className="amount">{amount}</td>
+      <td className="transaction-category">{props.category}</td>
+      <td className="amount">&#8377; {props.amount}</td>
     </tr>
   );
 };

@@ -278,11 +278,6 @@ const SignUp = () => {
             </div>
           )}
 
-          {/* <input type="checkbox" name="form_sign" id="form_sign" />
-          <label className="label">
-            By ticking the box, you acknowledge you have read and agreed to our
-            Terms of Use and Privacy Policy.
-          </label> */}
           <div className="buttons">
             <button className="create_account" type="submit">
               Create Account

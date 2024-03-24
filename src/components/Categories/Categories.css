@@ -6,8 +6,13 @@
     border: 0.7px solid #979797;
     padding: 16px;
     border-radius: 12px;
-    /* margin-left: 20px; */
+    margin-left: 20px;
     overflow-y: auto;
+  }
+}
+@media only screen and (min-width: 1099px){
+  .categories{
+    margin-left: 0px;
   }
 }
 @media only screen and (max-width: 640px) {

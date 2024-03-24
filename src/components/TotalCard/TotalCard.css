@@ -12,11 +12,26 @@
     width: 90%;
     border: 0.7px solid #979797;
     border-radius: 12px;
-    /* margin-left: 20px; */
+    margin-left: 20px;
   }
 }
 
+@media only screen and (min-width: 1099px){
+  .total-card {
+    margin-left: 0px;
+  }
+}
 @media only screen and (max-width: 640px) {
+  .total-card{
+    height: 30%;
+    margin-top: 10px;
+    width: 90%;
+    border: 0.7px solid #979797;
+    border-radius: 12px;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 400px){
   .total-card{
     height: 30%;
     margin-top: 10px;

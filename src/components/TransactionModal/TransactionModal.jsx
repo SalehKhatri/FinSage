@@ -14,14 +14,17 @@ function TransactionModal({ closeModal }) {
   const [transactionType, setTransactionType] = useState("income");
   const incomeCategories = ["Salary", "Personal", "Savings", "Others"];
   const expenseCatgories = [
-    "Home Necessity",
+    "Home necessities ",
     "Food and drinks",
-    "Transportation",
-    "Rent",
-    "Utilities",
-    "Loan",
-    "Emergency",
-    "Others",
+    "Investments",
+    "Entertainment",
+    "Transportation ",
+    "Rent ",
+    "Utilities ",
+    "Emergency ",
+    "Loans",
+    "Vacation",
+    "Other",
   ];
 
   const onSubmit = (data) => {
@@ -34,29 +37,27 @@ function TransactionModal({ closeModal }) {
         "auth-token": localStorage.getItem("auth-token"),
       },
       body: JSON.stringify(data),
-    }).then((response)=>{
-      if(response.status===201){
-        toast.success("Transaction added!",{
-          id:toastId
-        })
-        closeModal()
-      }else{
-        toast.error("An error occured!",
-        {
-          id:toastId
-        })
-      }
-    }).catch((e)=>{
-      console.log(e);
-      toast.error("An error occured",{
-        id:toastId
+    })
+      .then((response) => {
+        if (response.status === 201) {
+          toast.success("Transaction added!", {
+            id: toastId,
+          });
+          closeModal();
+        } else {
+          toast.error("An error occured!", {
+            id: toastId,
+          });
+        }
       })
-    });
+      .catch((e) => {
+        console.log(e);
+        toast.error("An error occured", {
+          id: toastId,
+        });
+      });
   };
 
-  useEffect(() => {
-    // document.getElementById("datePicker").valueAsDate = new Date();
-  });
   return (
     <>
       <div className="modal_wrapper" onClick={closeModal}></div>
@@ -277,7 +278,7 @@ function TransactionModal({ closeModal }) {
           )}
           <div className="modal_buttons">
             <button onClick={closeModal}>Cancel</button>
-          <button type="submit">Add</button>
+            <button type="submit">Add</button>
           </div>
         </form>
       </div>

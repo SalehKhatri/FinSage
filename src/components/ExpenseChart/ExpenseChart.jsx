@@ -4,12 +4,11 @@ import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import "./ExpenseChart.css";
 function ExpenseChart() {
-  const [labels,setLabels]=useState([]);
-  const [daywiseExpense,setDaywiseExpense]=useState([])
+  const [labels, setLabels] = useState([]);
+  const [daywiseExpense, setDaywiseExpense] = useState([]);
   const [loading, setLoading] = useState(true);
   const [weeklyExpense, setWeeklyExpense] = useState([]);
   const getWeeklyExpense = () => {
-    console.log("Api call");
     fetch(`${import.meta.env.VITE_API_BASE_URL}/transaction/weeklyExpense`, {
       headers: {
         "Content-Type": "application/json",
@@ -21,10 +20,10 @@ function ExpenseChart() {
       .then((response) => {
         setWeeklyExpense(response);
         // console.log(response);
-        response.expensesPerDay.map((respone)=>{
+        response.expensesPerDay.map((respone) => {
           labels.push(respone.day);
           daywiseExpense.push(respone.totalExpense);
-        })
+        });
         setLoading(false);
       });
   };
@@ -48,8 +47,7 @@ function ExpenseChart() {
           id="canvas"
           datasetIdKey="id"
           data={{
-            // labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
-            labels:labels,
+            labels: labels,
             datasets: [
               {
                 id: 1,

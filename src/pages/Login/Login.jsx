@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./Login.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setLoader } from "../../utilities/Redux/loadingSlice";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isPassVisible, setIsPassVisible] = useState(false);
   const {
     register,
     handleSubmit,
@@ -26,7 +29,6 @@ function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-      
     })
       .then((data) => data.json())
       .then((response) => {
@@ -103,23 +105,31 @@ function Login() {
                 </p>
               </div>
             )}
-            <input
-              type="text"
-              name="Password"
-              className="login_input_field"
-              placeholder="Password (Minimum 8 characters)"
-              {...register("password", {
-                required: {
-                  value: true,
-                  message: "Password is required",
-                },
-                minLength: {
-                  value: 8,
-                  message: "Minimum 8 characters",
-                },
-              })}
-              aria-invalid={errors.password ? "true" : "false"}
-            />
+            <div className="password_div">
+              <input
+                type={isPassVisible ? "text" : "password"}
+                name="Password"
+                className="login_input_field"
+                placeholder="Password (Minimum 8 characters)"
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is required",
+                  },
+                  minLength: {
+                    value: 8,
+                    message: "Minimum 8 characters",
+                  },
+                })}
+                aria-invalid={errors.password ? "true" : "false"}
+              />
+              <div
+                className="eye_icon"
+                onClick={() => setIsPassVisible((state) => !state)}
+              >
+                {!isPassVisible ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </div>
+            </div>
             <div className="login_error_div">
               {errors.password?.message && (
                 <div style={{ display: "flex", gap: "6px", margin: "4px 0px" }}>
