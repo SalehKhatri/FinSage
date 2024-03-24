@@ -110,7 +110,7 @@ function Login() {
                 type={isPassVisible ? "text" : "password"}
                 name="Password"
                 className="login_input_field"
-                placeholder="Password (Minimum 8 characters)"
+                placeholder="Password"
                 {...register("password", {
                   required: {
                     value: true,
