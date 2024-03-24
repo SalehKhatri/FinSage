@@ -97,7 +97,9 @@ function ExpenseChart() {
                 },
               },
             },
-          }}
+            
+          }
+        }
         />
       </div>
     </div>
