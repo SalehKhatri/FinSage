@@ -45,7 +45,7 @@ function Budget() {
           />
         ) : (
           <div className="budget_items">
-            {/* <BudgetItem /> */}
+            {!budgets.user.length?<h1>No budgets Yet!</h1>:""}
             {budgets?.user?.map((budget, key) => {
               return <BudgetItem key={key} {...budget} />;
             })}
