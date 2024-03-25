@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ClipLoader } from 'react-spinners';
 import { allIncomes, fetchAllIncomes } from '../../utilities/Redux/allIncome';
 import TransactionItem from '../TransactionItem/TransactionItem';
+import CallReceivedIcon from '@mui/icons-material/CallReceived';
 function Incomes() {
   const incomes = useSelector(allIncomes)?.allIncomes;
   const loading= useSelector(allIncomes)?.isLoading;
@@ -14,7 +15,8 @@ function Incomes() {
   return (
     <div className="expenses">
       <div className="expense-heading">
-        <p>Expense</p>
+        <p>Incomes</p>
+        <CallReceivedIcon />
       </div>
       {loading ? (
         <ClipLoader

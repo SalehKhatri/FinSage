@@ -4,6 +4,7 @@ import TransactionItem from "../TransactionItem/TransactionItem.jsx";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { allExpenses, fetchAllExpenses } from "../../utilities/Redux/allExpense.js";
+import CallMadeIcon from '@mui/icons-material/CallMade';
 const Expenses = () => {
   const expense = useSelector(allExpenses)?.allExpenses;
   const loading= useSelector(allExpenses)?.isLoading;
@@ -15,6 +16,7 @@ const Expenses = () => {
     <div className="expenses">
       <div className="expense-heading">
         <p>Expense</p>
+        <CallMadeIcon />
       </div>
       {loading ? (
         <ClipLoader
