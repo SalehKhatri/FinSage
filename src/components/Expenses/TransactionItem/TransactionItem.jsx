@@ -1,17 +1,7 @@
 import React from "react";
 import "./TransactionItem.css";
-
+import formatDate from "../../../utilities/FormatDate";
 const TransactionItem = (props) => {
-  const formatDate = (inputDate) => {
-    let date = new Date(inputDate);
-    date =
-      date.getDate() +
-      "-" +
-      date.toLocaleString("default", { month: "long" }) +
-      "-" +
-      date.getFullYear();
-    return date;
-  };
   return (
     <tr>
       <td>

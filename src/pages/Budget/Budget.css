@@ -1,0 +1,18 @@
+.budget_container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.budget_heading>p{
+  margin: 18px 0px;
+  font-size: 28px;
+}
+.budget_items{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

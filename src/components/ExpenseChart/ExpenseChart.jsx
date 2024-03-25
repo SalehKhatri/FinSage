@@ -3,33 +3,23 @@ import React, { useEffect, useState } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import "./ExpenseChart.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  userWeeklyExpense,
+  fetchUserWeeklyExpense,
+} from "../../utilities/Redux/weeklyExpenseSlice";
 function ExpenseChart() {
-  const [labels, setLabels] = useState([]);
-  const [daywiseExpense, setDaywiseExpense] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [weeklyExpense, setWeeklyExpense] = useState([]);
-  const getWeeklyExpense = () => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/transaction/weeklyExpense`, {
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("auth-token"),
-        method: "GET",
-      },
-    })
-      .then((data) => data.json())
-      .then((response) => {
-        setWeeklyExpense(response);
-        // console.log(response);
-        response.expensesPerDay.map((respone) => {
-          labels.push(respone.day);
-          daywiseExpense.push(respone.totalExpense);
-        });
-        setLoading(false);
-      });
-  };
-
+  const labels = [];
+  const daywiseExpense = [];
+  // const [weeklyExpense, setWeeklyExpense] = useState([]);
+  const dispatch = useDispatch();
+  const weeklyExpense = useSelector(userWeeklyExpense);
+  weeklyExpense?.user?.expensesPerDay?.map((data) => {
+    labels.push(data.day);
+    daywiseExpense.push(data.totalExpense);
+  });
   useEffect(() => {
-    getWeeklyExpense();
+    dispatch(fetchUserWeeklyExpense());
   }, []);
   return (
     <div className="chart_container">
@@ -39,7 +29,9 @@ function ExpenseChart() {
       <div className="chart_weeklyExpense">
         <p>
           Weekly Expense{" "}
-          <span className="expense_amount">{weeklyExpense.totalExpense}</span>
+          <span className="expense_amount">
+            {weeklyExpense?.user?.totalExpense}
+          </span>
         </p>
       </div>
       <div className="chart_main">
@@ -97,9 +89,7 @@ function ExpenseChart() {
                 },
               },
             },
-            
-          }
-        }
+          }}
         />
       </div>
     </div>

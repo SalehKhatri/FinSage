@@ -117,7 +117,7 @@
   }
   .Modal_Fields > input,.Modal_dropdowns > select {
     border-radius: 8px;
-    width: 100%;
+    width: 90%;
   }
   .Modal_dropdowns{
     display: flex;

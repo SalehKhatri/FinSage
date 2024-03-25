@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Categories.css";
 import Sort_icon from "/Categories_icons/sort_icon.svg";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchCategoryWiseExpense,
+  userCategoryWiseExpense,
+} from "../../utilities/Redux/categoryWiseExpense";
 
 const Categories = () => {
-  const [loading, setLoading] = useState(true);
-  const [categoryWiseData, setCategoryWiseData] = useState([]);
-
+  const loading = useSelector(userCategoryWiseExpense).isLoading;
+  const categoryWiseData = useSelector(userCategoryWiseExpense)?.user;
+  const dispatch = useDispatch();
   const allCategories = [
     "Home necessities",
     "Food and drinks",
@@ -20,38 +25,21 @@ const Categories = () => {
     "Vacation",
     "Other",
   ];
-
-  const totalExpensesByCategory = categoryWiseData.reduce((acc, category) => {
-    acc[category._id] = category.totalExpense;
+  const data = useSelector(userCategoryWiseExpense);
+  const totalExpensesByCategory = categoryWiseData?.reduce((acc, category) => {
+    acc[category?._id] = category?.totalExpense;
     return acc;
   }, {});
 
   useEffect(() => {
-    const getCategorywiseExpense = () => {
-      fetch(
-        `${import.meta.env.VITE_API_BASE_URL}/transaction/categoryWiseExpense`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
-            method: "GET",
-          },
-        }
-      )
-        .then((data) => data.json())
-        .then((response) => {
-          setCategoryWiseData(response);
-          setLoading(false);
-        });
-    };
-    getCategorywiseExpense();
+    dispatch(fetchCategoryWiseExpense());
   }, []);
 
   // Sort categories by totalExpense from high to low
-  allCategories.sort(
+  allCategories?.sort(
     (a, b) =>
-      (totalExpensesByCategory[b.toLowerCase()] || 0) -
-      (totalExpensesByCategory[a.toLowerCase()] || 0)
+      (totalExpensesByCategory?.[b.toLowerCase()] || 0) -
+      (totalExpensesByCategory?.[a.toLowerCase()] || 0)
   );
 
   return (
@@ -82,7 +70,7 @@ const Categories = () => {
               </div>
               <p className="amount">
                 {" "}
-                &#8377;{totalExpensesByCategory[category.toLowerCase()] || 0}
+                &#8377;{totalExpensesByCategory?.[category.toLowerCase()] || 0}
               </p>
             </div>
           ))}

@@ -1,0 +1,136 @@
+.budget {
+  margin-top: 20px;
+  width: 80%;
+  border: 0.7px solid #979797;
+  padding: 16px;
+  border-radius: 12px;
+}
+.heading {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 0px 14px 0px;
+}
+.budget-body {
+  display: flex;
+  flex-direction: column;
+}
+.total-money {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.progressMarks{
+  display: flex;
+  justify-content: space-between;
+}
+.total-money > progress {
+  border: 0;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0px 4px 0px;
+}
+progress::-webkit-progress-bar {
+  border: 0;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #E5E5E5;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #014080;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 40px;
+    border-radius: 15px;
+}
+.income-expense{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.income>ul>li>p,
+.expense>ul>li>p{
+    color: #939393;
+}
+.income,.expense{
+    font-size: 14px;
+    text-align: center;
+}
+.expense>ul>li::marker{
+    color:#E5E5E5 ;
+    font-size: large;
+}
+.income>ul>li::marker{
+    color: #014080;
+    font-size: large;
+}
+.budgetItems_utils{
+  margin-top: 12px;
+}
+.budgetItems_utils>p{
+  font-size: 12px;
+}
+.Budget_icon_delete_button>button{
+  background-color: inherit;
+  border: none;
+  color: #979797;
+  font-size: 16px;
+}
+.Budget_icon_delete_button>svg{
+  color: #979797;
+}
+.Budget_icon_delete_button{
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid #939393;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 8px;
+  border-radius: 12px;
+}
+.Budget_icon_delete_button:hover{
+  background-color: #c2c2c2;
+}
+.budgetItems_utils{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media  only screen and (max-width: 640px){
+  .Budget_icon_delete_button{
+    padding: 4px;
+    border-radius: 8px;
+  }
+}
+@media  only screen and (max-width: 400px){
+  .budgetItems_utils{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Budget_icon_delete_button{
+    margin-top: 8px;
+  }
+  progress::-webkit-progress-bar {
+    border: 0;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #E5E5E5;
+  }
+  progress::-webkit-progress-value {
+      border: 0;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #014080;
+  }
+  progress::-moz-progress-bar {
+      border: 0;
+      height: 30px;
+      border-radius: 10px;
+  }
+}
