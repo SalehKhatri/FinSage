@@ -5,6 +5,7 @@ import formatDate from "../../utilities/FormatDate";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { fetchUserBudget } from "../../utilities/Redux/budgetSlice";
+import RefreshData from "../../utilities/RefreshData";
 const BudgetItem = ({
   category,
   createdAt,
@@ -26,7 +27,7 @@ const BudgetItem = ({
       }
     );
     if (res.status >= 200) {
-      dispatch(fetchUserBudget());
+      RefreshData(dispatch)
       toast.success("Deleted Successfully!", {
         id: toastId,
       });

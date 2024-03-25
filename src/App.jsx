@@ -18,7 +18,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { loader } from "./utilities/Redux/loadingSlice";
 import PrivateRoute from "./utilities/PrivateRoute";
 import { fetchUserDetails, user } from "./utilities/Redux/userSlice";
-import NavBar from "./components/NavBar/NavBar";
 function App() {
   const location = useLocation();
   const shouldShowSidebar = () => {

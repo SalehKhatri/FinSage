@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import "./Expenses.css";
-import TransactionItem from "../TransactionItem/TransactionItem.jsx";
-import ClipLoader from "react-spinners/ClipLoader";
-import { useDispatch, useSelector } from "react-redux";
-import { allExpenses, fetchAllExpenses } from "../../utilities/Redux/allExpense.js";
-const Expenses = () => {
-  const expense = useSelector(allExpenses)?.allExpenses;
-  const loading= useSelector(allExpenses)?.isLoading;
+import React, { useEffect } from 'react'
+import './Incomes.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { ClipLoader } from 'react-spinners';
+import { allIncomes, fetchAllIncomes } from '../../utilities/Redux/allIncome';
+import TransactionItem from '../TransactionItem/TransactionItem';
+function Incomes() {
+  const incomes = useSelector(allIncomes)?.allIncomes;
+  const loading= useSelector(allIncomes)?.isLoading;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAllExpenses());
+    dispatch(fetchAllIncomes());
   }, []);
   return (
     <div className="expenses">
@@ -40,15 +40,16 @@ const Expenses = () => {
               </tr>
             </thead>
             <tbody>
-              {expense?.map((expenseItem, index) => (
-                <TransactionItem key={index} {...expenseItem} />
+              {incomes?.map((incomeItem, index) => (
+                <TransactionItem key={index} {...incomeItem} />
               ))}
             </tbody>
           </table>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Expenses;
+
+export default Incomes

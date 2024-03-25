@@ -9,6 +9,7 @@ import { fetchUserBudget } from "../../utilities/Redux/budgetSlice";
 import { fetchUserWeeklyExpense } from "../../utilities/Redux/weeklyExpenseSlice";
 import { fetchUserTotalBalance } from "../../utilities/Redux/totalBalanceSlice";
 import { fetchCategoryWiseExpense } from "../../utilities/Redux/categoryWiseExpense";
+import RefreshData from "../../utilities/RefreshData";
 
 // eslint-disable-next-line react/prop-types
 function TransactionModal({ closeModal }) {
@@ -56,10 +57,7 @@ function TransactionModal({ closeModal }) {
           toast.success("Transaction added!", {
             id: toastId,
           });
-          dispatch(fetchUserBudget());
-          dispatch(fetchUserWeeklyExpense());
-          dispatch(fetchUserTotalBalance());
-          dispatch(fetchCategoryWiseExpense());
+          RefreshData(dispatch)
           closeModal();
         } else {
           toast.error("An error occured!", {
@@ -92,10 +90,7 @@ function TransactionModal({ closeModal }) {
             id: toastId,
           });
           closeModal();
-          dispatch(fetchUserWeeklyExpense());
-          dispatch(fetchUserTotalBalance());
-          dispatch(fetchCategoryWiseExpense());
-          dispatch(fetchUserBudget());
+          RefreshData(dispatch)
         } else {
           toast.error("An error occured!", {
             id: toastId,
