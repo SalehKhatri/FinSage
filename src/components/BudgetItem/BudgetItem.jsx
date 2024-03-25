@@ -1,6 +1,6 @@
 import React from "react";
 import "./BudgetItem.css";
-import DeleteIcon from "@mui/icons-material/Delete";
+import  DeleteOutlineOutlinedIcon  from '@mui/icons-material/DeleteOutlineOutlined';
 import formatDate from "../../utilities/FormatDate";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -61,7 +61,7 @@ const BudgetItem = ({
             className="Budget_icon_delete_button"
             onClick={() => handleDelete(_id)}
           >
-            <DeleteIcon />
+            <DeleteOutlineOutlinedIcon />
           </div>
         </div>
       </div>
