@@ -1,7 +1,7 @@
 import React from "react";
 import "./TransactionItem.css";
 import formatDate from "../../utilities/FormatDate";
-import { Delete } from "@mui/icons-material";
+import  DeleteOutlineOutlinedIcon  from '@mui/icons-material/DeleteOutlineOutlined';
 import toast from "react-hot-toast";
 import RefreshData from "../../utilities/RefreshData";
 import { useDispatch } from "react-redux";
@@ -46,7 +46,7 @@ const TransactionItem = (props) => {
           handleDelete(props._id);
         }}
       >
-        <Delete />
+        <DeleteOutlineOutlinedIcon />
       </td>
     </tr>
   );
