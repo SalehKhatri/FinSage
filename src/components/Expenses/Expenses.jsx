@@ -31,6 +31,7 @@ const Expenses = () => {
           data-testid="loader"
         />
       ) : (
+        !expense?.length ? <h4 style={{textAlign:"center"}}>Nothing to display Yet!</h4>:
         <div className="expense-body">
           <table className="transaction">
             <thead>

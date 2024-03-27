@@ -40,35 +40,14 @@ function SideBar() {
       name: "Budget",
       icon: "Sidebar_icons/wallet-minus.svg",
     },
-    {
-      path: "/analytics",
-      name: "Analytics",
-      icon: "Sidebar_icons/chart.svg",
-    },
+    // {
+    //   path: "/analytics",
+    //   name: "Analytics",
+    //   icon: "Sidebar_icons/chart.svg",
+    // },
   ];
 
-  const bucketCategory_items = [
-    {
-      path: "/incomes",
-      name: "Incomes",
-      icon: "Sidebar_icons/income.svg",
-    },
-    {
-      path: "/debts",
-      name: "Debts",
-      icon: "Sidebar_icons/group.svg",
-    },
-    {
-      path: "/bills",
-      name: "Bills",
-      icon: "Sidebar_icons/bill.svg",
-    },
-    {
-      path: "/assests",
-      name: "Assests",
-      icon: "Sidebar_icons/coin.svg",
-    },
-  ];
+  
 
   const utilities = [
     {
@@ -108,7 +87,8 @@ const handleLogout=()=>{
           </div>
           <div className="user_profile">
             <div className="user_picture">
-              <img src="Sidebar_icons/profile.svg" />
+              {/* <img src="Sidebar_icons/profile.svg" /> */}
+              <NavLink to='/setting'><div className="profile_pic"><p>{useSelector(user)?.user?.firstname.charAt(0)}</p></div></NavLink>
             </div>
             <div className="user_name">
               {/* Display users first name only due to layout shift issue  */}
@@ -135,24 +115,6 @@ const handleLogout=()=>{
             })}
           </div>
 
-          <div className="bucket_category">
-            {/* <p>Bucket Category</p> */}
-            {bucketCategory_items.map((item, index) => {
-              return (
-                <NavLink
-                  style={{ padding: !open && "6px 0px 6px 12px" }}
-                  to={item.path}
-                  key={index}
-                  className="link"
-                >
-                  <img src={item.icon} />
-                  <div className="link_text" style={{ scale: !open && "0" }}>
-                    {item.name}
-                  </div>
-                </NavLink>
-              );
-            })}
-          </div>
 
           <div className="utilities">
             {utilities.map((item, index) => {
