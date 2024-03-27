@@ -128,7 +128,14 @@ function TransactionModal({ closeModal }) {
                   value: true,
                   message: "Amount is required",
                 },
-                valueAsNumber: true,
+                valueAsNumber:{
+                  value: true,
+                  message: "Amount must be a number",
+                },
+                min:{
+                  value: 1,
+                  message: "Amount Cannot be 0"
+                }
               })}
             />
             {errors.amount?.message && (
@@ -269,7 +276,14 @@ function TransactionModal({ closeModal }) {
                   value: true,
                   message: "Amount is required",
                 },
-                valueAsNumber: true,
+                valueAsNumber:{
+                  value: true,
+                  message: "Amount must be a number",
+                },
+                min:{
+                  value: 1,
+                  message: "Amount Cannot be 0"
+                }
               })}
             />
             {errors.amount?.message && (
