@@ -25,7 +25,6 @@ const Categories = () => {
     "Vacation",
     "Other",
   ];
-  const data = useSelector(userCategoryWiseExpense);
   const totalExpensesByCategory = categoryWiseData?.reduce((acc, category) => {
     acc[category?._id] = category?.totalExpense;
     return acc;

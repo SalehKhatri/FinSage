@@ -88,7 +88,7 @@ const handleLogout=()=>{
           <div className="user_profile">
             <div className="user_picture">
               {/* <img src="Sidebar_icons/profile.svg" /> */}
-              <NavLink to='/setting'><div className="profile_pic"><p>{useSelector(user)?.user?.firstname.charAt(0)}</p></div></NavLink>
+              <NavLink to='/setting'><div className="profile_pic"><p>{useSelector(user)?.user?.firstname?.charAt(0)}</p></div></NavLink>
             </div>
             <div className="user_name">
               {/* Display users first name only due to layout shift issue  */}
