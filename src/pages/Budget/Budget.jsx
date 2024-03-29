@@ -8,23 +8,9 @@ function Budget() {
   const budgets = useSelector(budget);
   const dispatch = useDispatch();
   useEffect(() => {
-    // const getBudgets = () => {
-    //   fetch(`${import.meta.env.VITE_API_BASE_URL}/budget/getBudget`, {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       "auth-token": localStorage.getItem("auth-token"),
-    //       method: "GET",
-    //     },
-    //   })
-    //     .then((data) => data.json())
-    //     .then((response) => {
-    //       setBudgets(response);
-    //       setLoading(false);
-    //     });
-    // };
-    // getBudgets();
     dispatch(fetchUserBudget());
   }, []);
+  console.log(budgets);
   return (
     <div className="body">
       <div className="budget_container">
@@ -45,7 +31,7 @@ function Budget() {
           />
         ) : (
           <div className="budget_items">
-            {!budgets?.user?.length?<h1>No budgets Yet!</h1>:""}
+            {!budgets?.user?.length ? <h1>No budgets Yet!</h1> : ""}
             {budgets?.user?.map((budget, key) => {
               return <BudgetItem key={key} {...budget} />;
             })}
