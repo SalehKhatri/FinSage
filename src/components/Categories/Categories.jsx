@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Categories.css";
-import Sort_icon from "/Categories_icons/sort_icon.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchCategoryWiseExpense,
@@ -45,7 +44,7 @@ const Categories = () => {
     <div className="categories">
       <div className="heading">
         <p>Categories</p>
-        <img src={Sort_icon} alt="" />
+        <img src={`/Categories_icons/sort_icon.svg`} alt="" />
       </div>
       {loading ? (
         <ClipLoader
